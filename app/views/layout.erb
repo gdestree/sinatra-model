@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-88w0u/oucDSTE30ETLLIobzhT+bQ6CSsiqQyLZpwHvve89eqUA9F2Db6ST6jGRLx" crossorigin="anonymous">
-<title>Gregors</title>
+<title>Gregor's Template</title>
 
 </head>
 
@@ -10,26 +10,23 @@
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Gregor's Assessment</a>
+      <a class="navbar-brand" href="/">Gregor's Template</a>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div>
       <ul class="nav navbar-nav">
         <%if logged_in?%>
+        <li><a href="/users/<%= (User.find(session[:user_id])).id %>"><%= current_user.first_name.capitalize%></a></li>
+        <li><a href="/logout">Logout</a></li>
         <% else %>
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="/users/new">Register</a></li>
+        <li><a href="/login">Login</a></li>
         <% end %>
-        <li class="dropdown">
-        </li>
+        <li class="dropdown"></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="/users">Users</a></li>
+        <li><a href="#">Link</a></li>
         <li><a href="#">Link</a></li>
       </ul>
     </div>
@@ -39,10 +36,6 @@
 <div class="container">
     <%= yield %>
 </div>
-
-
-
-
 
 </body>
 </html>

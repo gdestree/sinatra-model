@@ -1,26 +1,5 @@
+<div class="jumbotron">
 <h2>Welcome <%= current_user.first_name%></h2>
-
-<h3>Your questions:</h3>
-  <%@user.questions.each do |question|%>
-  <p><a href="/questions/<%=question.id%>">Title: <%= question.title%></a></p>
-  <p>Question: <%= question.question%></p>
-  <p>------------------------------------</p>
-  <% end %>
-
-<h3>Your answers:</h3>
-<%@user.answers.each do |answer|%>
-  <p>
-    <a href="/questions/<%=answer.question_id%>">Question: <%= answer.question.title%></a>
-  </p>
-  <p>Answer: <%= answer.answer%></p>
-  <p>------------------------------------</p>
-  <% end %>
-
-<h3>Your comments:</h3>
-<%@user.comments.each do |comment|%>
-  <p>
-    <a href="/questions/<%=@questions.find_by(id: comment.commentable_id).id%>">Question: <%= @questions.find_by(id: comment.commentable_id).title%></a>
-  </p>
-  <p>Comment: <%= comment.comment%></p>
-  <p>------------------------------------</p>
-  <% end %>
+<h5>Username: <%= current_user.username%></h5>
+<h5>Email: <%= current_user.email%></h5>
+</div>
