@@ -1,11 +1,44 @@
-<%= erb :'/_errors', layout: false %>
+<div class="jumbotron">
+  <%= erb :'/_errors', layout: false %>
 
+<form class="form-horizontal" action="/users" method="post">
+  <fieldset>
+    <legend>Sign up</legend>
+    <div class="form-group">
+      <label for="user[first_name]" class="col-lg-2 control-label">Firstname</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="user[first_name]" placeholder="Firstname">
+      </div>
+    </div>
 
-<div class="form" align="center">
-     <form action="/users" method="post">
-     <input type="text" name="user[first_name]" placeholder="First Name"><br>
-     <input type="text" name="user[username]" placeholder="Username"><br>
-     <input type="text" name="user[email]" placeholder="Email"><br>
-     <input type="password" name="user[password]" placeholder="Password"><br>
-     <input type="submit" value="Register"></form>
+    <div class="form-group">
+      <label for="user[username]" class="col-lg-2 control-label">Username</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="user[username]" placeholder="Username">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="user[email]" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="user[email]" placeholder="Email">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="user[password]" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="user[password]" placeholder="Password">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary" align="center">Register</button>
+      </div>
+    </div>
+
+  </div>
+  </fieldset>
+</form>
 </div>
