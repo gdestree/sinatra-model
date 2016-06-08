@@ -1,5 +1,18 @@
 <div class="jumbotron">
-<h2>Welcome <%= current_user.first_name%></h2>
-<h5>Username: <%= current_user.username%></h5>
-<h5>Email: <%= current_user.email%></h5>
+<h2>Profile page</h2>
+<h5>First name: <%= @user.first_name%></h5>
+<h5>Username: <%= @user.username%></h5>
+<h5>Email: <%= @user.email%></h5>
+<%if @user.id == session["user_id"]%>
+<form class="form-horizontal" action="/users/<%=@user.id%>/edit" method="get">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary" align="left">Edit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+<%else%>
+<%end%>
 </div>

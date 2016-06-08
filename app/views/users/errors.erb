@@ -1,0 +1,10 @@
+<div class="jumbotron">
+<h1>You can not do that.</h1>
+
+<% if logged_in? %>
+
+<h3>You can only delete or edit your own profile.</h3>
+<% else %>
+<h3> Please login before trying to delete or edit a profile.</h3>
+<%end%>
+</div>
